@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="/js/scripts.js" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="container">
+        <h2>Welcome, <%= user.username %>!</h2>
+        <p>Your email: <%= user.email %></p>
+
+        <h3>Financial Overview</h3>
+        <div id="dashboard">
+            <h4><a href="/expenses/add">Add Expense</a></h4>
+            <ul>
+                <% expenses.forEach(expense => { %>
+                    <li><%= expense.description %> - $<%= expense.amount %> on <%= expense.date %></li>
+                <% }) %>
+            </ul>
+            <p><a href="/edit_expense">Edit Expenses</a> | <a href="/delete_expense">Delete Expenses</a></p>
+
+            <h4><a href="/budgets/add">Add Budget</a></h4>
+            <ul>
+                <% budgets.forEach(budget => { %>
+                    <li><%= budget.category %> - $<%= budget.amount %> for <%= budget.month %>/<%= budget.year %></li>
+                <% }) %>
+            </ul>
+            <p><a href="/edit_budget">Edit Budgets</a> | <a href="/delete_budget">Delete Budgets</a></p>
+
+            <h4><a href="/goals/add">Add Goal</a></h4>
+            <ul>
+                <% goals.forEach(goal => { %>
+                    <li><%= goal.goal_name %> - Target: $<%= goal.target_amount %>, Current: $<%= goal.current_amount %>, Deadline: <%= goal.deadline %></li>
+                <% }) %>
+            </ul>
+            <p><a href="/edit_goal">Edit Goals</a> | <a href="/delete_goal">Delete Goals</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="/js/scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Budget</h2>
+        <form method="POST" action="/budgets/add">
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            <label for="month">Month:</label>
+            <input type="number" id="month" name="month" required>
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" required>
+            <button type="submit">Add Budget</button>
+        </form>
+    </div>
+</body>
+</html>

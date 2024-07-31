@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="/js/scripts.js" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <% if (user) { %>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        <% } else { %>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        <% } %>
+    </div>    
+    <div class="container">
+        <h1>Welcome to FinPlan Buddy</h1>
+        <p>Your personal financial planning assistant.</p>
+
+        <% if (user) { %>
+            <p>Welcome back, <%= user.username %>!</p>
+        <% } else { %>
+            <p>Please <a href="/login">login</a> or <a href="/register">register</a>.</p>
+        <% } %>
+    </div>
+</body>
+</html>

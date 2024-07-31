@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="/js/scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Goal</h2>
+        <form method="POST" action="/goals/add">
+            <label for="goal_name">Goal Name:</label>
+            <input type="text" id="goal_name" name="goal_name" required>
+            <label for="target_amount">Target Amount:</label>
+            <input type="number" id="target_amount" name="target_amount" required>
+            <label for="current_amount">Current Amount:</label>
+            <input type="number" id="current_amount" name="current_amount" required>
+            <label for="deadline">Deadline:</label>
+            <input type="date" id="deadline" name="deadline" required>
+            <button type="submit">Add Goal</button>
+        </form>
+    </div>
+</body>
+</html>
