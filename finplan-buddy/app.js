@@ -9,10 +9,10 @@ const app = express();
 
 // Database connection setup
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'finplan_buddy',
+    host: 'mysql-rudro-socials.alwaysdata.net',
+    user: 'rudro-socials',
+    password: 'wtfkindapass124!',
+    database: 'rudro-socials_finplanbuddy',
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
